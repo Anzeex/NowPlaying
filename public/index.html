@@ -24,5 +24,40 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+    <filter id="wavy-distortion">
+        <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.005 0.01"
+        numOctaves="1"
+        seed="2"
+        result="turbulence">
+        <animate
+            attributeName="baseFrequency"
+            dur="40s"
+            values="0.005 0.01; 0.01 0.005; 0.005 0.01"
+            repeatCount="indefinite"
+        />
+        </feTurbulence>
+
+        <feOffset
+        in="turbulence"
+        dx="-100"
+        dy="0"
+        result="offsetTurbulence"
+        />
+
+        <feDisplacementMap
+        in="SourceGraphic"
+        in2="offsetTurbulence"
+        scale="30"
+        xChannelSelector="R"
+        yChannelSelector="G"
+        />
+    </filter>
+    </svg>
+  </body>
+  </html>
+  
   </body>
 </html>
