@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px);
+    transform: scale(1.1); 
+    z-index: -2; 
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: -1;
+}
+
+#content {
+    position: relative;
+    z-index: 1; 
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 40vw;
+    max-width: 80vw;
+    box-sizing: border-box;
+    padding: 0 8vw;
+}
+
+#login-button {
+    background-color: #1db954;
+    color: #ffffff;
+    border: none;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    border-radius: 40px;
+    cursor: pointer;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+    min-width: 200px; 
+    white-space: nowrap; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#login-button:hover {
+    background-color: #1ed760;
+}
+
+#now-playing {
+    display: none;
+}
+
+#album-cover {
+    width: 100%;
+    max-width: 80vw;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#song-name {
+    margin-top: 5%;
+    font-size: 2vw;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+#artist-name {
+    margin-top: 3%;
+    font-size: 1.5vw;
+    color: #a8a8a8;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+
+#playback-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 90vw;
+    margin-top: 5%;
+    box-sizing: border-box;
+}
+
+#current-time,
+#total-time {
+    width: 10%;
+    font-size: 1.2vw;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    color: #a8a8a8;
+}
+
+#progress-bar {
+    flex: 1;
+    height: 0.4vw;
+    background-color: #404040;
+    border-radius: 1vw;
+    margin: 0 1vw;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background-color: #f3f5e4;
+}
+
+@media (max-width: 1000px) {
+    #content {
+        width: 50vw;
+        padding: 0;
+    }
+
+    #album-cover {
+        width: 50vw;
+    }
+
+    #song-name {
+        font-size: 6vw;
+    }
+
+    #artist-name {
+        font-size: 5vw;
+    }
+
+    #playback-info {
+        width: 100%;
+    }
+
+    #current-time,
+    #total-time {
+        width: 15%;
+        font-size: 3vw;
+        font-family: 'Roboto Condensed', sans-serif;
+        text-align: center; 
+        color: #a8a8a8;
+    }
+
+    #progress-bar {
+        margin: 0 2vw;
+        height: 1vw;
+    }
+}
